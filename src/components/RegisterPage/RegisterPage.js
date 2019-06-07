@@ -5,6 +5,9 @@ class RegisterPage extends Component {
   state = {
     username: '',
     password: '',
+    firstName: '',
+    lastName: '',
+    email: '',
   };
 
   registerUser = (event) => {
@@ -16,6 +19,9 @@ class RegisterPage extends Component {
         payload: {
           username: this.state.username,
           password: this.state.password,
+          firstName: this.state.firstName,
+          lastName: this.state.lastName,
+          email: this.state.email,
         },
       });
     } else {
