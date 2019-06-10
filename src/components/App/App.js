@@ -30,6 +30,26 @@ class App extends Component {
       <Router>
         <div>
           <Nav />
+
+          <h2 class="testFont testFont_alfaSlabOne">
+              Sample Jutsu text for testing fonts. VERY LOUD!!!
+          </h2>
+          <h2 class="testFont testFont_cabin">
+              Sample Jutsu text for testing fonts. VERY LOUD!!!
+          </h2>
+          <h2 class="testFont testFont_daysOne">
+              Sample Jutsu text for testing fonts. VERY LOUD!!!
+          </h2>
+          <h2 class="testFont testFont_didactGothic">
+              Sample Jutsu text for testing fonts. VERY LOUD!!!
+          </h2>
+          <h2 class="testFont testFont_oxygen">
+              Sample Jutsu text for testing fonts. VERY LOUD!!!
+          </h2>
+          <h2 class="testFont testFont_fredericka">
+              Sample Jutsu text for testing fonts. VERY LOUD!!!
+          </h2>
+
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
             <Redirect exact from="/" to="/home" />

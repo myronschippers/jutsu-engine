@@ -1,3 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Cabin:400,500,600,700|Days+One|Didact+Gothic|Fredericka+the+Great|Oxygen:400,700&display=swap');
+/*
+* Alfa+Slab+One
+* Cabin:400,500,600,700
+* Days+One
+* Didact+Gothic
+* Fredericka+the+Great
+* Oxygen:400,700
+*/
+
+.testFont {
+    font-size: 4rem;
+    font-weight: 400;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.testFont_alfaSlabOne {
+    font-family: 'Alfa Slab One';
+}
+
+.testFont_cabin {
+    font-family: 'Cabin';
+}
+
+.testFont_daysOne {
+    font-family: 'Days One';
+}
+
+.testFont_didactGothic {
+    font-family: 'Didact Gothic';
+}
+
+.testFont_oxygen {
+    font-family: 'Oxygen';
+}
+
+.testFont_fredericka {
+    font-family: 'Fredericka the Great';
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
