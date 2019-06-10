@@ -3,7 +3,7 @@
  * @param {object} state
  */
 const mapStateToProps = state => ({
-    reduxState: state,
+    store: state,
 });
 
 export default mapStateToProps;
