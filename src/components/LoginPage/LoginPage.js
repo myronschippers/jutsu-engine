@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import mapStateToProps from '../../redux/mapStateToProps';
 
 class LoginPage extends Component {
   state = {
@@ -32,12 +33,12 @@ class LoginPage extends Component {
   render() {
     return (
       <div>
-        {this.props.errors.loginMessage && (
+        {this.props.store.errors.loginMessage && (
           <h2
             className="alert"
             role="alert"
           >
-            {this.props.errors.loginMessage}
+            {this.props.store.errors.loginMessage}
           </h2>
         )}
         <form onSubmit={this.login}>
@@ -86,12 +87,5 @@ class LoginPage extends Component {
     );
   }
 }
-
-// Instead of taking everything from state, we just want the error messages.
-// if you wanted you could write this code like this:
-// const mapStateToProps = ({errors}) => ({ errors });
-const mapStateToProps = state => ({
-  errors: state.errors,
-});
 
 export default connect(mapStateToProps)(LoginPage);

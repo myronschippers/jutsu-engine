@@ -1,6 +1,7 @@
 import React from 'react';
 import {Route} from 'react-router-dom'
 import {connect} from 'react-redux';
+import mapStateToProps from '../../redux/mapStateToProps';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
@@ -20,18 +21,17 @@ const ProtectedRoute = (props) => {
   const {
     // Alias prop 'component' as 'ComponentToProtect'
     component: ComponentToProtect,
-    user,
-    loginMode,
+    store,
     ...otherProps
   } = props;
 
   let ComponentToShow;
 
-  if(user.id) {
+  if(store.user.id) {
     // if the user is logged in (only logged in users have ids)
     // show the component that is protected
     ComponentToShow = ComponentToProtect;
-  } else if (loginMode === 'login') {
+  } else if (store.loginMode === 'login') {
     // if they are not logged in, check the loginMode on Redux State
     // if the mode is 'login', show the LoginPage
     ComponentToShow = LoginPage;
@@ -50,17 +50,6 @@ const ProtectedRoute = (props) => {
         component={ComponentToShow}
       />
   )
-}
-
-// Instead of taking everything from state, we just want the user and loginMode
-// to determine which page we should show the user
-// if you wanted you could write this code like this:
-// const mapStateToProps = ({ user, loginMode }) => ({ user, loginMode });
-const mapStateToProps = (state) => {
-  return {
-    user: state.user,
-    loginMode: state.loginMode,
-  }
 }
 
 export default connect(mapStateToProps)(ProtectedRoute)
