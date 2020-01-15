@@ -17,10 +17,10 @@ import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 // PAGE ROUTE COMPONENTS
-import AboutPage from '../AboutPage/AboutPage';
-import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
-import HomePage from '../HomePage/HomePage';
+import AboutPage from '../../pages/AboutPage/AboutPage';
+import UserPage from '../../pages/UserPage/UserPage';
+import InfoPage from '../../pages/InfoPage/InfoPage';
+import HomePage from '../../pages/HomePage/HomePage';
 
 class App extends Component {
   componentDidMount () {
