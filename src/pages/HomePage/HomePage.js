@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import mapStateToProps from '../../redux/mapStateToProps';
 
 // COMPONENTS
-import SliderTest from '../SliderTest/SliderTest';
-import BtnImgBase from '../BtnImgBase/BtnImgBase';
+import SliderTest from '../../components/SliderTest/SliderTest';
+import BtnImgBase from '../../components/BtnImgBase/BtnImgBase';
 
 class HomePage extends Component {
     render() {
