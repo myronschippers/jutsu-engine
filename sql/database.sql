@@ -55,6 +55,48 @@ CREATE TABLE "user_security_questions" (
 -- NINJA TABLES
 -- ===================
 
+CREATE TABLE "character" (
+    "id" SERIAL PRIMARY KEY,
+    "first_name" VARCHAR (80),
+    "last_name" VARCHAR (80),
+    "tag" VARCHAR (80),
+    -- relationships
+    "user_id" INT REFERENCES "user"
+);
+
+--
+-- NINJA ORIGIN TABLES
+-- • --------------------
+
+CREATE TABLE "origin_countries" (
+    "id" SERIAL PRIMARY KEY,
+    "name" VARCHAR (80),
+    "asset_path" VARCHAR (170)
+);
+
+CREATE TABLE "origin_villages" (
+    "id" SERIAL PRIMARY KEY,
+    "village_name" VARCHAR (80),
+    "asset_path" VARCHAR (170),
+    -- relationships
+    "country_id" INT REFERENCES NOT NULL
+);
+
+CREATE TABLE "origin_clans" (
+    "id" SERIAL PRIMARY KEY,
+    "clan_name" VARCHAR (80),
+    "asset_path" VARCHAR (170),
+    -- relationships
+    "country_id" INT REFERENCES "origin_counties",
+    "village_id" INT REFERENCES "origin_villages"
+);
+
+CREATE TABLE "character_origin" (
+    "id" SERIAL PRIMARY KEY,
+    "character_id" INT REFERENCES "characters",
+    "clan_id" INT REFERENCES "origin_clans"
+);
+
 -- ===================
 -- JUTSU TABLES
 -- ===================
