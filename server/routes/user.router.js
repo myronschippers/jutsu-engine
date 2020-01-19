@@ -23,9 +23,10 @@ router.post('/register', (req, res, next) => {
     email,
   } = req.body;
   const password = encryptLib.encryptPassword(req.body.password);
+  const createdDate = new Date();
 
-  const queryText = `INSERT INTO "user" (username, password, first_name, last_name, email)
-                      VALUES ($1, $2, $3, $4, $5) RETURNING id`;
+  const queryText = `INSERT INTO "user" (username, password, first_name, last_name, email, created_at, updated_at)
+                      VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id`;
   pool.query(queryText,
     [
       username,
@@ -33,6 +34,8 @@ router.post('/register', (req, res, next) => {
       firstName,
       lastName,
       email,
+      createdDate,
+      createdDate,
     ])
     .then(() => res.sendStatus(201))
     .catch((err) => {
