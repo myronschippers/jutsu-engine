@@ -51,6 +51,15 @@ CREATE TABLE "user_security_questions" (
     "answer" VARCHAR (500) NOT NULL
 );
 
+-- security questions
+INSERT INTO "security_questions" ("question")
+VALUES ('What is the name of your favorite pet?'),
+('What is the name of your paternal grandfather?'),
+('What is the name of your maternal grandfather?'),
+('What is your favorite color?'),
+('Where was your favorite vacation?'),
+('What the make and model of your first car?');
+
 -- ===================
 -- NINJA TABLES
 -- ===================
