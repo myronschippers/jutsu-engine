@@ -59,4 +59,36 @@ router.post('/logout', (req, res) => {
   res.sendStatus(200);
 });
 
+/**
+ * Records the user's security question choice and their answer.
+ * The security question is used for resetting the user's password
+ * or updating the user's information.
+ */
+router.post('/security/:userId', (req, res) => {
+  const {
+    questionId,
+    answer,
+  } = req.body;
+  const userId = req.param.userId;
+  const queryText = `INSERT INTO "user_security_questions" (user_id, security_question_id, answer)
+                      VALUES ($1, $2, $3);`;
+
+  pool.query(queryText,
+    [
+      userId,
+      questionId,
+      answer,
+    ])
+    .then((response) => {
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log('POST security:', err);
+      res.status(500)
+      res.send({
+        error: err,
+      })
+    })
+});
+
 module.exports = router;
