@@ -91,4 +91,22 @@ router.post('/security/:userId', (req, res) => {
     })
 });
 
+/**
+ * Retrieves all available security questions.
+ */
+router.get('/questions', (req, res) => {
+  const queryText = `SELECT * FROM "security_questions";`;
+
+  pool.query(queryText)
+    .then((response) => {
+      res.send(response.rows);
+    })
+    .catch((err) => {
+      res.status(500);
+      res.send({
+        error: err,
+      });
+    });
+});
+
 module.exports = router;
