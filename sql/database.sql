@@ -51,7 +51,7 @@ CREATE TABLE "user_security_questions" (
     "answer" VARCHAR (500) NOT NULL
 );
 
--- security questions
+-- CREATE: security questions
 INSERT INTO "security_questions" ("question")
 VALUES ('What is the name of your favorite pet?'),
 ('What is the name of your paternal grandfather?'),
@@ -59,6 +59,18 @@ VALUES ('What is the name of your favorite pet?'),
 ('What is your favorite color?'),
 ('Where was your favorite vacation?'),
 ('What the make and model of your first car?');
+
+-- CREATE: available roles
+INSERT INTO "roles" ("role_name")
+VALUES ('Admin'),
+('Player');
+
+-- CREATE: available permissions
+INSERT INTO "permissions" ("permission_name", "permission_level")
+VALUES ('write'),
+('delete'),
+('read'),
+('comment');
 
 -- ===================
 -- NINJA TABLES
