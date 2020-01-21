@@ -24,23 +24,11 @@ CREATE TABLE "roles" (
     "role_name" VARCHAR (255) NOT NULL
 );
 
-CREATE TABLE "permissions" (
-    "id" SERIAL PRIMARY KEY,
-    "permission_name" VARCHAR (255) NOT NULL,
-    "permission_level" VARCHAR (255) NOT NULL
-);
-
 -- USER, JUNCTION TABLES
 
 CREATE TABLE "users_roles" (
     "id" SERIAL PRIMARY KEY,
     "user_id" INT REFERENCES "users" NOT NULL,
-    "role_id" INT REFERENCES "roles" NOT NULL
-);
-
-CREATE TABLE "permissions_roles" (
-    "id" SERIAL PRIMARY KEY,
-    "permission_id" INT REFERENCES "permissions" NOT NULL,
     "role_id" INT REFERENCES "roles" NOT NULL
 );
 
@@ -64,13 +52,6 @@ VALUES ('What is the name of your favorite pet?'),
 INSERT INTO "roles" ("role_name")
 VALUES ('Admin'),
 ('Player');
-
--- CREATE: available permissions
-INSERT INTO "permissions" ("permission_name", "permission_level")
-VALUES ('write'),
-('delete'),
-('read'),
-('comment');
 
 -- ===================
 -- NINJA TABLES
