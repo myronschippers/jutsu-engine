@@ -51,7 +51,8 @@ VALUES ('What is the name of your favorite pet?'),
 -- CREATE: available roles
 INSERT INTO "roles" ("role_name")
 VALUES ('Admin'),
-('Player');
+('Player'),
+('Visitor');
 
 -- ===================
 -- NINJA TABLES
